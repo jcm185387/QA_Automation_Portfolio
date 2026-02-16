@@ -38,7 +38,7 @@ Cada proyecto está organizado en su propia carpeta con:
 - Documentación en `README.md` con instrucciones de ejecución
 
 ## Autor
-**Juan [Tu Apellido]**  
+**Juan Cruz Mogica**  
 QA Manual en transición hacia QA Automation  
-LinkedIn: [Tu perfil]  
-GitHub: [Tu usuario]
+LinkedIn: https://www.linkedin.com/in/juan-cruz-mogica-474a6087/  
+GitHub: jcm185387
