@@ -23,3 +23,10 @@ python test_ecommerce.py
 - Automatización de un flujo completo de negocio (login → compra → confirmación). 
 - Validación de resultados con aserciones. 
 - Documentación y estructura profesional del proyecto.
+
+## Evidencia visual
+Durante la ejecución se generan capturas de pantalla en cada paso:
+- `01_login.png` → Login exitoso
+- `02_carrito.png` → Producto agregado al carrito
+- `03_checkout.png` → Datos de checkout completados
+- `04_confirmacion.png` → Mensaje de confirmación de compra
