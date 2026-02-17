@@ -16,9 +16,13 @@ chrome_options.add_argument("--start-maximized")
 driver = webdriver.Chrome(options=chrome_options)
 wait = WebDriverWait(driver, 10)
 
-# Crear carpeta dinámica con fecha y hora
+# Crear carpeta screenshots si no existe
+base_dir = "Proyecto2_Ecommerce_Selenium/screenshots"
+os.makedirs(base_dir, exist_ok=True)
+
+# Subcarpeta con fecha y hora para cada ejecución
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-screenshot_dir = os.path.join("Proyecto2_Ecommerce_Selenium", f"screenshots_{timestamp}")
+screenshot_dir = os.path.join(base_dir, f"run_{timestamp}")
 os.makedirs(screenshot_dir, exist_ok=True)
 
 def login(usuario, password):
