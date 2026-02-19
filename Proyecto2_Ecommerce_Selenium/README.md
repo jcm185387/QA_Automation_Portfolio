@@ -16,7 +16,7 @@ https://www.saucedemo.com/
 5. Validación de mensaje de confirmación
 
 ## Ejecución
-```bash
+pip install -r requirements.txt
 python test_ecommerce.py
 
 ## 🎯 Qué demuestra este proyecto 
@@ -26,7 +26,9 @@ python test_ecommerce.py
 
 ## Evidencia visual
 Durante la ejecución se generan capturas de pantalla en cada paso:
-- `01_login.png` → Login exitoso
-- `02_carrito.png` → Producto agregado al carrito
-- `03_checkout.png` → Datos de checkout completados
-- `04_confirmacion.png` → Mensaje de confirmación de compra
+- 01_login.png → Login exitoso
+- 02_carrito.png → Producto agregado al carrito
+- 03_checkout.png → Datos de checkout completados
+- 04_confirmacion.png → Mensaje de confirmación de compra
+
+⚠️ Nota: Las capturas se guardan en la carpeta `screenshots/run_YYYYMMDD_HHMMSS/`, la cual está incluida en `.gitignore` para mantener el repositorio limpio.
