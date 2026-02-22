@@ -1,4 +1,5 @@
 import requests
+import json
 
 def test_get_posts_status_code():
     response = requests.get("https://jsonplaceholder.typicode.com/posts")
@@ -7,6 +8,10 @@ def test_get_posts_status_code():
 def test_get_posts_json_structure():
     response = requests.get("https://jsonplaceholder.typicode.com/posts")
     data = response.json()
+    
+    # Imprimir el JSON completo en consola, formateado 
+    #print(json.dumps(data, indent=4))
+
     assert isinstance(data, list)
     assert "userId" in data[0]
     assert "id" in data[0]
