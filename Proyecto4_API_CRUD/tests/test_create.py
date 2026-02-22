@@ -1,6 +1,6 @@
 import requests, json
 
-BASE_URL = "https://reqres.in/api"
+BASE_URL = "https://jsonplaceholder.typicode.com"
 
 def test_create_user():
     payload = {"name": "Juan", "job": "QA Automation"}
