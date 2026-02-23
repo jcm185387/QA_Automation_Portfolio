@@ -28,7 +28,9 @@ pytest -v tests/test_api.py
 Este proyecto genera reportes visuales de las ejecuciones usando **pytest-html**. 
 Cada ejecución crea un archivo único con fecha y hora en el nombre, almacenado en la carpeta `reports/`. 
 
-Ejemplo de ejecución en Linux/Mac: ```bash pytest -v --html=reports/report_$(date +"%Y-%m-%d_%H-%M-%S").html --self-contained-html
+Ejemplo de ejecución en Linux/Mac: 
+```bash 
+pytest -v --html=reports/report_$(date +"%Y-%m-%d_%H-%M-%S").html --self-contained-html
 
 Ejemplo de ejecución en Windows PowerShell:
 pytest -v --html=reports/report_$(Get-Date -Format "yyyy-MM-dd_HH-mm-ss").html --self-contained-html

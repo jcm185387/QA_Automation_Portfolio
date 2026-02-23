@@ -42,3 +42,7 @@ Cada proyecto está organizado en su propia carpeta con:
 QA Manual en transición hacia QA Automation  
 LinkedIn: https://www.linkedin.com/in/juan-cruz-mogica-474a6087/  
 GitHub: jcm185387
+
+
+# QA Automation Portfolio
+Probando pipeline CI
