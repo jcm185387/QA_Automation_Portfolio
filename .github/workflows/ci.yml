@@ -1,4 +1,4 @@
-name: CI - API CRUD Tests
+name: CI - QA Automation Portfolio
 
 on:
   push:
@@ -21,20 +21,28 @@ jobs:
         with:
           python-version: "3.11"
 
-      # 3. Instalar dependencias
+      # 3. Instalar dependencias para TODOS los proyectos
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pytest requests pytest-html
+          pip install pytest requests pytest-html selenium
 
-      # 4. Ejecutar pruebas y generar reporte HTML
+      # 4. Ejecutar pruebas en todo el repo y generar reporte HTML
       - name: Run tests
         run: |
           pytest --maxfail=1 --disable-warnings -q --html=report.html --self-contained-html
 
-      # 5. Guardar reporte como artefacto
+      # 5. Subir reporte como artefacto
       - name: Upload test report
         uses: actions/upload-artifact@v4
         with:
           name: pytest-report
           path: report.html
+
+      # 6. Subir screenshots como artefacto (si existen)
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: Proyecto2_Ecommerce_Selenium/screenshots
