@@ -37,7 +37,7 @@ jobs:
       - name: Run API tests
         run: |
           pytest Proyecto3_API_Testing Proyecto4_API_CRUD \
-            --maxfail=1 --disable-warnings -q \
+            --disable-warnings -q \
             --html=report.html --self-contained-html
 
       # 5. Subir reporte como artefacto
