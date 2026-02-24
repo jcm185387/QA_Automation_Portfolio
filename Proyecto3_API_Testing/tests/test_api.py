@@ -29,3 +29,4 @@ def test_get_single_post():
 def test_get_invalid_post_returns_404(): 
     response = requests.get("https://jsonplaceholder.typicode.com/posts/999999") 
     assert response.status_code == 404
+#forzado ci 1
