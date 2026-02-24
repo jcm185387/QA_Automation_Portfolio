@@ -5,7 +5,22 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
+from selenium.webdriver.chrome.options import Options
+
 driver = webdriver.Chrome()
+
+#Se agrega sección, para PIPELINES, al no haber interfaz gráfica en GITHUB ACTIONS se agregan opciones al navegador
+
+
+options = Options()
+options.add_argument("--headless")  # modo sin interfaz
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+
+driver = webdriver.Chrome(options=options)
+
+
+
 driver.get("https://the-internet.herokuapp.com/login")
 
 driver.find_element(By.ID, "username").send_keys("tomsmith")
