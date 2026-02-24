@@ -42,6 +42,7 @@ jobs:
 
       # 5. Subir reporte como artefacto
       - name: Upload test report
+        if: always() # 👈 fuerza ejecución aunque pytest falle
         uses: actions/upload-artifact@v4
         with:
           name: api-tests-report
