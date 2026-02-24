@@ -46,3 +46,7 @@ GitHub: jcm185387
 
 # QA Automation Portfolio
 Probando pipeline CI
+
+Proyectos 1 y 2 son pruebas de interfaz con Selenium, pensadas para ejecución local.
+
+Proyectos 3 y 4 son pruebas de APIs, integradas en CI/CD con reportes automatizados.

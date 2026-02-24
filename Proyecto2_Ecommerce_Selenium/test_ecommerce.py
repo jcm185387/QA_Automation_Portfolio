@@ -12,6 +12,9 @@ chrome_options = Options()
 chrome_options.add_argument("--incognito")
 chrome_options.add_argument("--start-maximized")
 
+
+
+
 driver = webdriver.Chrome(options=chrome_options)
 wait = WebDriverWait(driver, 10)
 

@@ -1,10 +1,16 @@
-name: CI - QA Automation Portfolio
+name: CI - API Tests (Projects 3 & 4)
 
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'Proyecto3_API_Testing/**'
+      - 'Proyecto4_API_CRUD/**'
   pull_request:
     branches: [ "main" ]
+    paths:
+      - 'Proyecto3_API_Testing/**'
+      - 'Proyecto4_API_CRUD/**'
 
 jobs:
   test:
@@ -21,34 +27,22 @@ jobs:
         with:
           python-version: "3.11"
 
-      # 3. Instalar dependencias para TODOS los proyectos
+      # 3. Instalar dependencias necesarias para APIs
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pytest requests pytest-html selenium
+          pip install pytest requests pytest-html
 
-      # 4. Instalar Google Chrome en el runner
-      - name: Install Chrome
+      # 4. Ejecutar pruebas SOLO en Proyecto3 y Proyecto4
+      - name: Run API tests
         run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+          pytest Proyecto3_API_Testing Proyecto4_API_CRUD \
+            --maxfail=1 --disable-warnings -q \
+            --html=report.html --self-contained-html
 
-      # 5. Ejecutar pruebas en todo el repo y generar reporte HTML
-      - name: Run tests
-        run: |
-          pytest --maxfail=1 --disable-warnings -q --html=report.html --self-contained-html
-
-      # 6. Subir reporte como artefacto
+      # 5. Subir reporte como artefacto
       - name: Upload test report
         uses: actions/upload-artifact@v4
         with:
-          name: pytest-report
+          name: api-tests-report
           path: report.html
-
-      # 7. Subir screenshots como artefacto (si existen)
-      - name: Upload screenshots
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: screenshots
-          path: Proyecto2_Ecommerce_Selenium/screenshots
