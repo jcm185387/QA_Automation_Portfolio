@@ -7,7 +7,8 @@ import time
 
 from selenium.webdriver.chrome.options import Options
 
-driver = webdriver.Chrome()
+#se comenta pues se usará el chrome sin interfaz
+# driver = webdriver.Chrome()
 
 #Se agrega sección, para PIPELINES, al no haber interfaz gráfica en GITHUB ACTIONS se agregan opciones al navegador
 
@@ -18,6 +19,7 @@ options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 
 driver = webdriver.Chrome(options=options)
+
 
 
 
