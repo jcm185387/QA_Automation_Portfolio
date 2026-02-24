@@ -27,19 +27,25 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest requests pytest-html selenium
 
-      # 4. Ejecutar pruebas en todo el repo y generar reporte HTML
+      # 4. Instalar Google Chrome en el runner
+      - name: Install Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
+      # 5. Ejecutar pruebas en todo el repo y generar reporte HTML
       - name: Run tests
         run: |
           pytest --maxfail=1 --disable-warnings -q --html=report.html --self-contained-html
 
-      # 5. Subir reporte como artefacto
+      # 6. Subir reporte como artefacto
       - name: Upload test report
         uses: actions/upload-artifact@v4
         with:
           name: pytest-report
           path: report.html
 
-      # 6. Subir screenshots como artefacto (si existen)
+      # 7. Subir screenshots como artefacto (si existen)
       - name: Upload screenshots
         if: always()
         uses: actions/upload-artifact@v4
